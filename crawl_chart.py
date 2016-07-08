@@ -11,7 +11,7 @@ RE_CHART = re.compile("<h3>(?P<chart_name>[^<]+)</h3>", re.DOTALL)
 
 RE_BENCHMARKS = re.compile("<a href=\"(?P<bench_url>[^\"]+)\" title=\"[^\"]+\">(?P<bench_name>[^<]+)</a><br />\s*<span>[^<]+</span>\s*<span>\((?P<bench_detail>[^<]+)\)</span>", re.DOTALL)
 
-RE_PRODUCTS = re.compile("<div class=\"clLeft\">\s*<input type=\"checkbox\" name=\"prod\[(?P<prod_id>\d+)\]\" class=\"[^\"]+\" id=\"(?P<prod_group>[^\"]+)\" />\s*<label for=\"[^\"]+\">(?P<prod_name>[^<]+)</label>\s*<br />\s*<ul style=\"[^\"]+\">\s*<li><span>(?P<prod_detail>[^<]+)</span></li>\s*</ul>\s*</div>\s*<div class=\"clRight clearfix\">\s*<span style=\"[^\"]+\" class=\"scoreBlock\">\s*<span style=\"[^\"]+\">\s*(?P<score>[\d\.]+)\s*</span>", re.DOTALL)
+RE_PRODUCTS = re.compile("<div class=\"clLeft\">\s*<input type=\"checkbox\" name=\"prod\[(?P<prod_id>\d+)\]\" class=\"[^\"]+\" id=\"[^\"]+\" />\s*<label for=\"[^\"]+\">(?P<prod_name>[^<]+)</label>\s*<br />\s*<ul style=\"[^\"]+\">\s*<li><span>(?P<prod_detail>[^<]+)</span></li>\s*</ul>\s*</div>\s*<div class=\"clRight clearfix\">\s*<span style=\"[^\"]+\" class=\"scoreBlock\">\s*<span style=\"[^\"]+\">\s*(?P<score>[\d\.]+)\s*</span>", re.DOTALL)
 
 
 #url_chart = "http://www.tomshardware.com/charts/2015-vga-charts/benchmarks,186.html"
@@ -38,7 +38,6 @@ for benchmark in benchmarks:
             "bench_detail" : benchmark["bench_detail"],
             
             "prod_id"      : product["prod_id"],
-            "prod_group"   : product["prod_group"],
             "prod_name"    : product["prod_name"],
             "prod_detail"  : product["prod_detail"],
 
