@@ -25,7 +25,7 @@ for line in sys.stdin:
     search_memory = re.search("(?:(\d+)x)?\s*(\d+)\s*GB", obj["prod_detail"])
     n_devices, mem_gb = search_memory.groups() 
 
-    obj["vga_n_devices"] = int(n_devices) if n_devices else 1
+    obj["vga_n_gpus"] = int(n_devices) if n_devices else 1
     obj["vga_mem_gb"] = int(mem_gb)
 
     sys.stdout.write("{}\n".format(json.dumps(obj)))
